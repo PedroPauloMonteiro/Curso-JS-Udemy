@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule seu IMC</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Tabela IMC</h1>
+        <Table>
+            <tr>
+                <td>
+                   <strong>IMC</strong>
+                </td>
+                <td>
+                   <strong>Resultado</strong>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col1">
+                   Menos do que 18,5
+                </td>
+                <td>
+                    Abaixo do Peso
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col1">
+                   Entre 18,5 e 24,9
+                </td>
+                <td>
+                    Peso ideal
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col1">
+                   Entre 25 e 29,9
+                </td>
+                <td>
+                    Sobrepeso
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col1">
+                   Entre 30 e 34,9
+                </td>
+                <td>
+                    Obesidade grau 1
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col1">
+                   Entre 35 e 39,9
+                </td>
+                <td>
+                    Obesidade grau 2
+                </td>
+
+                <tr>
+                    <td class="col1">
+                       Mais do que 40
+                    </td>
+                    <td>
+                        Obesidade grau 3
+                    </td>
+                </tr>
+            </tr>
+        </Table>
+
+        <h1>Calcule o seu IMC</h1>
+
+        <form action="">
+            <p><label for="peso">Peso:</label></p>
+            
+            <p>
+                <input type="number" name="peso" id="peso" step="0.1" placeholder="ex: 70Kg">
+            </p>
+            
+            <p><label for="altura">Altura:</label></p>
+            
+            <p>
+                <input type="number" name="altura" id="altura" step="0.1" placeholder="ex: 1.80">
+            </p>
+            
+
+            <p>
+                <input type="button" value="Calcular" onclick="calcular()" id="botao">
+            </p>
+        </form>
+        <div id="resposta" class="hide">
+
+        </div>
+    </section>
+
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
