@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="sec-main">
+        <h1 id="title-main">Lista de Tarefas</h1>
+        
+        <form>
+            <p class="inputs">
+                    <input type="text" name="tarefa" id="tarefa" placeholder="Add Tarefa" class="inputs-txt" required>
+            </p>
+                
+            <p class="inputs">
+                    <textarea name="" id="description" cols="30" rows="10" class="inputs-txt" required placeholder="Add Descrição"></textarea>
+            </p>
+            <input type="button" value="Adicionar Tarefa" class="btn addTarefa">
+        </form>
+
+        <div id="list"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

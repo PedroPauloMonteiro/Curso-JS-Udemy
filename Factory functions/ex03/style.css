@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    ---DarkerColor: #4184BF;
+    ---HoverColors: #436073;
+}
+
+body {
+    background-color: var(---DarkerColor);
+}
+
+#sec-main {
+    background-color: white;
+    border: 3px solid black;
+    width: 650px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+#title-main {
+    font-family:'Tilt Neon', sans-serif;
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.inputs {
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.358);
+    border-radius: 5px;
+    background-color: #c3daee;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(---HoverColors);
+    color: white;
+    transition: 0.1s;
+    transform: translate(1px, -1px);
+}
+
+.inputs-txt {
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.422);
+    border-radius: 5px;
+}
+
+.inputs-txt:focus {
+    outline: 1px solid rgba(0, 0, 0, 0.611);
+}
+
+#description {
+    height: 100px;
+}
+
+#list {
+    border-top: 1px solid rgba(0, 0, 0, 0.432);
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.card-tarefas {
+    border: 1px solid #2f7ebec2;
+    background-color: #8ac1eefc;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.card-tarefas p, h1 {
+    margin-bottom: 10px;
+}
+
+.btn-list {
+    display: inline;
+    width: 50px;
+    height: 30px;
+    margin-right: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.492);
+    border-radius: 5px;
+}
+
+.btn-list:hover {
+    cursor: pointer;
+    background-color: var(---HoverColors);
+    color: white;
+    border: 1px solid black;
+    transition: 0.3s;
+    transform: translate(0px, -1px);
+}
