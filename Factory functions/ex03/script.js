@@ -1,11 +1,11 @@
-//Resolver Mensgaem de erro caso não digitar a tarefa ou descrição, usar o localStorage, estudar o codigo
+//usar o localStorage, estudar o codigo
 
 function listaDeTarefas() {
     let divList = document.getElementById('list');
     let cardTarefa;
     return {
         inicia() {
-            this.click()
+            this.click();
         },
 
 
@@ -13,13 +13,19 @@ function listaDeTarefas() {
             document.addEventListener('click', (e) => {
                 let el = e.target;
                 if(el.classList.contains('addTarefa')) {
-                    let tarefa = document.querySelector('#tarefa').value
-                    let description = document.querySelector('#description').value
+                    let tarefaInput = document.querySelector('#tarefa');
+                    let descriptionInput = document.querySelector('#description');
+                    let tarefa = tarefaInput.value;
+                    let description = descriptionInput.value;
                     if(tarefa.length === 0 || description.length  === 0) {
-                        divList.innerHTML= '<h1>Digite a tarefa e a descrição!</h1>'
+                        alert('Digite a tarefa E a descrição');
+                        tarefaInput.focus();
                         return
                     } else {
-                        this.addTarefaEDescrição(tarefa,description)
+                        this.addTarefaEDescrição(tarefa,description);
+                        tarefaInput.value = ''
+                        descriptionInput.value = ''
+                        tarefaInput.focus();
                     }
                 }
                 if(el.classList.contains('Delete')) {
@@ -78,7 +84,8 @@ function listaDeTarefas() {
                 e.preventDefault();
             })
             return {btnFinish, btnDelet}
-        }
+        },
+
     }
 
 }
