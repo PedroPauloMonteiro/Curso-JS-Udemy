@@ -9,6 +9,8 @@ botao.addEventListener('click', (e) => {
             this.cpfInput = document.getElementById('icpf').value;
             this.cpfLimpo = this.cpfInput.replace(/\D+/g, '');
             this.usuario = document.getElementById('iusu').value;
+            this.senha = document.getElementById('isenha').value;
+            this.repSenha = document.getElementById('irepsenha').value;
         }
 
         verifica() {
@@ -16,6 +18,8 @@ botao.addEventListener('click', (e) => {
             this.verificaSobrenome();
             this.verificaCpf();
             this.verificaUsu();
+            this.verificaSenha();
+            this.verificaRepSenha();
         }
 
         verficaNome() {
@@ -104,22 +108,19 @@ botao.addEventListener('click', (e) => {
         }
 
         verificaUsu() {
-            let usuArray = Array.from(this.usuario);
+            //let usuArray = Array.from(this.usuario);
             let expressao = (/^[a-zA-Z0-9]+$/)
-            for (typeof c === expressao) {
-                if (typeof c == 'symbol') {
-                    console.log('Chegou aqui')
-                    const divErro = document.getElementById('usu-error');
-                    let pErro2 = document.createElement('p')
-                    pErro2.style.color = 'red'
-                    pErro2.style.fontSize = '14px'
-                    pErro2.innerHTML = 'Usuario Invalido! Use apenas letras(a, b, c...) ou numeros(1, 2, 3...)'
-                    divErro.appendChild(pErro2);
-                    return;
-                }
+            if(!expressao.test(this.usuario)) {
+                const divErro = document.getElementById('usu-error');
+                let pErro2 = document.createElement('p')
+                pErro2.style.color = 'red'
+                pErro2.style.fontSize = '14px'
+                pErro2.innerHTML = 'Usuario Invalido! Use apenas letras(a, b, c...) ou numeros(1, 2, 3...)'
+                divErro.appendChild(pErro2);
+                return;
             }
 
-            if(this.usuario < 3 || this.usuario > 12) {
+            if (this.usuario.length < 3 || this.usuario.length > 12) {
                 const divErro = document.getElementById('usu-error');
                 let pErro2 = document.createElement('p')
                 pErro2.style.color = 'red'
@@ -128,9 +129,63 @@ botao.addEventListener('click', (e) => {
                 divErro.appendChild(pErro2);
                 return;
             }
+
+            if(this.usuario.length === 0) {
+                const divErro = document.getElementById('usu-error');
+                let pErro2 = document.createElement('p')
+                pErro2.style.color = 'red'
+                pErro2.style.fontSize = '14px'
+                pErro2.innerHTML = 'Campo usuario não pode estar vazio!'
+                divErro.appendChild(pErro2);
+                return;
+            }
+        }
+
+
+        verificaSenha() {
+            if (this.senha.length < 6 || this.senha.length > 12) {
+                const divErro = document.getElementById('senha-error');
+                let pErro2 = document.createElement('p')
+                pErro2.style.color = 'red'
+                pErro2.style.fontSize = '14px'
+                pErro2.innerHTML = 'Senha Invalida!'
+                divErro.appendChild(pErro2);
+                return;
+            }
+
+            if (this.senha.length === 0) {
+                const divErro = document.getElementById('senha-error');
+                let pErro2 = document.createElement('p')
+                pErro2.style.color = 'red'
+                pErro2.style.fontSize = '14px'
+                pErro2.innerHTML = 'Campo Senha não pode estar vazio!'
+                divErro.appendChild(pErro2);
+                return;
+            }
+        }
+
+
+        verificaRepSenha() {
+            if(this.repSenha !== this.senha) {
+                const divErro = document.getElementById('rep-senha-error');
+                let pErro2 = document.createElement('p')
+                pErro2.style.color = 'red'
+                pErro2.style.fontSize = '14px'
+                pErro2.innerHTML = 'Senha Invalida!'
+                divErro.appendChild(pErro2);
+                return;
+            }
+            if(this.repSenha.length === 0) {
+                const divErro = document.getElementById('rep-senha-error');
+                let pErro2 = document.createElement('p')
+                pErro2.style.color = 'red'
+                pErro2.style.fontSize = '14px'
+                pErro2.innerHTML = 'Campo senha não pode estar vazio!'
+                divErro.appendChild(pErro2);
+                return;
+            }
         }
     }
-
     const verificacao = new VerificaInputs();
     verificacao.verifica();
 })
